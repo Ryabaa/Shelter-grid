@@ -1,0 +1,45 @@
+$color-primary: #4c4c4c;
+$color-secondary: #545454;
+$color-tertiary: #cdcdcd;
+$color-quaternary: #f1cdb3;
+$color-quinary: #fafafa;
+$font-color-link: #292929;
+$bg-primary: #ffffff;
+$bg-secondary: #f6f6f6;
+
+/*---------------------------*/
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    font-size: 100%;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+html {
+    font-size: 15px;
+}
+
+@mixin transistion {
+    transition: all 0.3s ease;
+}
+
+.text {
+    font-family: Arial;
+    line-height: 160%;
+}
+
+.title {
+    font-family: Georgia;
+    font-size: 2.33rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.link {
+    font-family: Georgia;
+    font-size: 1.13rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
