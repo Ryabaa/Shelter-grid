@@ -567,4 +567,77 @@ html {
   font-size: 0.8rem;
   line-height: 18px;
 }
+
+.footer {
+  height: 350px;
+  background: url(./img/footer-gradient-background.png);
+  background-size: cover;
+  padding: 0 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  justify-items: unset;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.footer-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+  max-width: 305px;
+  height: 234px;
+  margin-top: 56px;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.footer-container__title {
+  color: #ffffff;
+}
+
+.footer-container__card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-container__card-subtitle {
+  color: #f1cdb3;
+  font-size: 1.33rem;
+}
+
+.footer-container__card-1 {
+  width: 251px;
+}
+
+.footer-container__card-2 {
+  width: 239px;
+}
+
+.footer-container__card-3 {
+  width: 302px;
+}
+
+.footer-container__card-4 {
+  width: 270px;
+}
+
+.footer-image {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
 /*# sourceMappingURL=style.css.map */
