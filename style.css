@@ -504,4 +504,67 @@ html {
   -ms-grid-column-span: 1;
   grid-column: 8 / 9;
 }
+
+.donation {
+  height: 464px;
+  background: #f6f6f6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5em 1fr 1fr 5em;
+      grid-template-columns: 5em 1fr 1fr 5em;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.donation-image {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+}
+
+.donation-container {
+  max-width: 380px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  row-gap: 20px;
+}
+
+.donation-container__title {
+  max-width: 300px;
+}
+
+.donation-container__subtitle {
+  font-size: 1rem;
+}
+
+.donation-container__card {
+  width: 349px;
+  height: 43px;
+  background: #f1cdb3;
+  border-radius: 9px;
+  padding: 0 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.donation-container__card-number {
+  font-size: 1.33rem;
+}
+
+.donation-container__text {
+  color: #b2b2bb;
+  font-style: italic;
+  font-size: 0.8rem;
+  line-height: 18px;
+}
 /*# sourceMappingURL=style.css.map */
