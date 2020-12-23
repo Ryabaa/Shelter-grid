@@ -5,6 +5,7 @@ $color-quaternary: #f1cdb3;
 $color-quinary: #fafafa;
 $color-sixfold: #ffffff;
 $font-color-link: #292929;
+$link-hover: #fddcc4;
 $bg-primary: #ffffff;
 $bg-secondary: #f6f6f6;
 
@@ -36,6 +37,7 @@ html {
     font-size: 2.33rem;
     line-height: 130%;
     letter-spacing: 0.06em;
+    color: $color-secondary;
 }
 
 .link {
@@ -54,18 +56,13 @@ html {
     @include transist;
 
     &:hover {
-        background: $color-quinary;
+        background: $link-hover;
     }
 }
 
 @mixin items($jitems, $aitems) {
     justify-items: $jitems;
     align-items: $aitems;
-}
-
-@mixin self($jself, $aself) {
-    justify-self: $jself;
-    align-self: $aself;
 }
 
 .header-hero {
@@ -96,7 +93,7 @@ html {
         color: $color-sixfold;
         line-height: 15px;
         letter-spacing: 0.1em;
-        @include self(unset, center);
+        align-self: center;
     }
 
     .nav {
@@ -104,7 +101,6 @@ html {
         grid-row: 2 / 3;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        @include self(items, end);
         @include items(center, center);
 
         &-link {
@@ -139,8 +135,8 @@ html {
     &-container {
         max-width: 460px;
         display: grid;
-        row-gap: 40px;
-        @include self(start, center);
+        row-gap: 30px;
+        align-self: center;
 
         &__title {
             color: $color-sixfold;
@@ -153,7 +149,7 @@ html {
     }
 
     &-image {
-        @include self(end, end);
+        align-self: end;
     }
 }
 
@@ -175,8 +171,8 @@ html {
         grid-template-rows: repeat(3, auto);
 
         &__title {
-            color: $color-secondary;
             grid-row: 1 / 2;
+            max-width: 350px;
         }
 
         &__text {
@@ -190,5 +186,96 @@ html {
                 grid-row: 3 / 4;
             }
         }
+    }
+}
+
+.pets {
+    height: 877px;
+    background: $bg-secondary;
+    display: grid;
+    padding: 80px 0 100px;
+    grid-template-columns: 145px 1fr 145px;
+    grid-template-rows: repeat(3, auto);
+    @include items(center, center);
+
+    &-title {
+        text-align: center;
+        max-width: 400px;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    &-card {
+        border-radius: 9px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        width: 270px;
+        height: 435px;
+        background: $color-quinary;
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        row-gap: 30px;
+        @include items(center, center);
+        padding-bottom: 30px;
+        align-content: space-between;
+
+        &:hover {
+            background: $color-sixfold;
+        }
+
+        &__first {
+            justify-self: start;
+        }
+
+        &__last {
+            justify-self: end;
+        }
+
+        &__name {
+            font-size: 1.33rem;
+        }
+
+        &__link {
+            background: none;
+            border: 2px solid $link-hover;
+
+            &:hover {
+                background: $link-hover;
+            }
+        }
+    }
+
+    &-button {
+        border-radius: 100px;
+        border: 2px solid $color-quaternary;
+        cursor: pointer;
+        width: 52px;
+        height: 52px;
+        display: grid;
+        @include items(center, center);
+        @include transist();
+
+        &__previous {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            background: none;
+        }
+
+        &__next {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+            background: none;
+        }
+
+        &:hover {
+            background: $color-quaternary;
+        }
+    }
+
+    &-link {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        width: 261px;
+        height: 52px;
     }
 }
