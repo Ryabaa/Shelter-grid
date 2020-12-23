@@ -3,6 +3,7 @@ $color-secondary: #545454;
 $color-tertiary: #cdcdcd;
 $color-quaternary: #f1cdb3;
 $color-quinary: #fafafa;
+$color-sixfold: #ffffff;
 $font-color-link: #292929;
 $bg-primary: #ffffff;
 $bg-secondary: #f6f6f6;
@@ -21,7 +22,7 @@ html {
     font-size: 15px;
 }
 
-@mixin transistion {
+@mixin transist {
     transition: all 0.3s ease;
 }
 
@@ -42,4 +43,116 @@ html {
     font-size: 1.13rem;
     line-height: 130%;
     letter-spacing: 0.06em;
+    color: $font-color-link;
+    background: $color-quaternary;
+    border-radius: 100px;
+    width: 207px;
+    height: 52px;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    @include transist;
+
+    &:hover {
+        background: $color-quinary;
+    }
+}
+
+@mixin items($jitems, $aitems) {
+    justify-items: $jitems;
+    align-items: $aitems;
+}
+
+@mixin self($jself, $aself) {
+    justify-self: $jself;
+    align-self: $aself;
+}
+
+.header-hero {
+    height: 908px;
+    background: url(./img/start-screen-gradient-background.png);
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    padding: 0 40px;
+}
+
+.header {
+    display: grid;
+    @include items(unset, end);
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+
+    &-logo {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        color: $color-quaternary;
+    }
+
+    &-subtitle {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        color: $color-sixfold;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        @include self(unset, center);
+    }
+
+    .nav {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        @include self(items, end);
+        @include items(center, center);
+
+        &-link {
+            color: $color-tertiary;
+
+            &__border {
+                color: $color-quinary;
+                border-bottom: 3px solid $color-quaternary;
+
+                &:hover {
+                    color: $color-tertiary;
+                }
+            }
+
+            &:hover {
+                color: $color-quinary;
+            }
+
+            &:active {
+                color: $color-quinary;
+                border-bottom: 3px solid $color-quaternary;
+            }
+        }
+    }
+}
+
+.hero {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-template-columns: 1fr auto;
+
+    &-container {
+        max-width: 460px;
+        display: grid;
+        row-gap: 40px;
+        @include self(start, center);
+
+        &__title {
+            color: $color-sixfold;
+            max-width: 310px;
+        }
+
+        &__text {
+            color: $color-tertiary;
+        }
+    }
+
+    &-image {
+        @include self(end, end);
+    }
 }
