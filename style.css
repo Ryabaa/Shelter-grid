@@ -307,6 +307,7 @@ html {
 }
 
 .pets-button {
+  outline: none;
   border-radius: 100px;
   border: 2px solid #f1cdb3;
   cursor: pointer;

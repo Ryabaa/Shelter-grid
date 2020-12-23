@@ -8,29 +8,29 @@
     <link rel="stylesheet" href="media/media.css">
 </head>
 <body>
-    <main>
-        <section class="header-hero">
-            <header class="header">
-                <h1 class="title header-logo">Cozy House</h1>
-                <h2 class="text header-subtitle">Shelter for pets in Boston</h2>
-                <nav class="nav">
-                    <a href="" class="text nav-link__border">About the shelter</a>
-                    <a href="" class="text nav-link">Our pets</a>
-                    <a href="" class="text nav-link">Help the shelter</a>
-                    <a href="" class="text nav-link">Contacts</a>
-                </nav>
-            </header>
-            <hero class="hero">
-                <div class="hero-container">
-                    <h1 class="title hero-container__title">Not only people need a house</h1>
-                    <p class="text hero-container__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                    <a href="" class="link hero-container__link">Make a friend</a>
-                </div>  
-                <img src="./img/dog-hero.png" class="hero-image">
-            </hero>
-        </section>
+    <section class="header-hero">
+        <header class="header">
+            <h1 class="title header-logo">Cozy House</h1>
+            <h2 class="text header-subtitle">Shelter for pets in Boston</h2>
+            <nav class="nav">
+                <a href="#about" class="text nav-link__border">About the shelter</a>
+                <a href="#pets" class="text nav-link">Our pets</a>
+                <a href="#help" class="text nav-link">Help the shelter</a>
+                <a href="#contacts" class="text nav-link">Contacts</a>
+            </nav>
+        </header>
+        <hero class="hero">
+            <div class="hero-container">
+                <h1 class="title hero-container__title">Not only people need a house</h1>
+                <p class="text hero-container__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+                <a href="#donation" class="link hero-container__link">Make a friend</a>
+            </div>  
+            <img src="./img/dog-hero.png" class="hero-image">
+        </hero>
+    </section>
 
-        <section class="about">
+    <main>
+        <section class="about" id="about">
             <img src="./img/about-pets.png" class="about-image">
             <div class="about-container">
                 <h1 class="about-container__title title">About the shelter “Cozy House”</h1>
@@ -39,7 +39,7 @@
             </div>
         </section>
 
-        <section class="pets">
+        <section class="pets" id="pets">
             <h1 class="pets-title title">Our friends who are looking for a house</h1>
             <button class="pets-button pets-button__previous">
                 <img src="./img/Arrow-left.png" class="pets-button__arrow">
@@ -65,7 +65,7 @@
             <a href="" class="link pets-link">Get to know the rest</a>
         </section>
 
-        <section class="help">
+        <section class="help" id="help">
             <h1 class="title help-title">How you can help our shelter</h1>
             <div class="help-container">
                 <div class="help-card help-card-first help-card-1">
@@ -107,7 +107,7 @@
             </div>
         </section>
 
-        <section class="donation">
+        <section class="donation" id="donation">
             <img src="./img/donation-dog.png" alt="" class="donation-image">
             <div class="donation-container">
                 <h1 class="donation-container__title title">You can also make a donation</h1>
@@ -121,7 +121,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="footer-container">
             <h1 class="footer-container__title title">For questions and suggestions</h1>
             <div class="footer-container__card footer-container__card-1">
