@@ -130,12 +130,12 @@ html {
 .hero {
     display: grid;
     grid-row: 2 / 3;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto auto;
 
     &-container {
         max-width: 460px;
         display: grid;
-        row-gap: 30px;
+        row-gap: 20px;
         align-self: center;
 
         &__title {
@@ -155,7 +155,7 @@ html {
 
 .about {
     background: $bg-primary;
-    height: 588px;
+    min-height: 588px;
     display: grid;
     grid-template-columns: 5em 1fr 1fr 5em;
     @include items(center, center);
@@ -195,7 +195,7 @@ html {
     background: $bg-secondary;
     display: grid;
     padding: 80px 0 100px;
-    grid-template-columns: 145px 1fr 145px;
+    grid-template-columns: 6em 1fr 6em;
     grid-template-rows: repeat(3, auto);
     @include items(center, center);
 
@@ -261,12 +261,26 @@ html {
             grid-row: 2 / 3;
             grid-column: 1 / 2;
             background: none;
+
+            &-2 {
+                display: none;
+            }
+            &-3 {
+                display: none;
+            }
         }
 
         &__next {
             grid-row: 2 / 3;
             grid-column: 3 / 4;
             background: none;
+
+            &-2 {
+                display: none;
+            }
+            &-3 {
+                display: none;
+            }
         }
 
         &:hover {
@@ -283,6 +297,7 @@ html {
 }
 
 .help {
+    min-height: 431px;
     background: $bg-primary;
     padding: 80px 0 100px;
     display: grid;
@@ -368,7 +383,7 @@ html {
 }
 
 .donation {
-    height: 464px;
+    min-height: 464px;
     background: $bg-secondary;
     display: grid;
     grid-template-columns: 5em 1fr 1fr 5em;
@@ -379,7 +394,7 @@ html {
     }
 
     &-container {
-        max-width: 380px;
+        max-width: 320px;
         display: grid;
         grid-template-rows: repeat(4, auto);
         row-gap: 20px;
@@ -393,14 +408,14 @@ html {
         }
 
         &__card {
-            width: 349px;
+            width: 320px;
             height: 43px;
             background: $color-quaternary;
             border-radius: 9px;
-            padding: 0 15px;
             display: grid;
             grid-template-columns: repeat(2, auto);
-            @include items(center, center);
+            justify-content: space-evenly;
+            @include items(unset, center);
 
             &-number {
                 font-size: 1.33rem;
@@ -417,7 +432,7 @@ html {
 }
 
 .footer {
-    height: 350px;
+    min-height: 350px;
     background: url(./img/footer-gradient-background.png);
     background-size: cover;
     padding: 0 40px;
@@ -428,7 +443,7 @@ html {
     &-container {
         display: grid;
         grid-template-rows: repeat(3, auto);
-        max-width: 305px;
+        max-width: min-content;
         height: 234px;
         margin-top: 56px;
         align-content: space-between;

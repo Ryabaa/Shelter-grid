@@ -145,15 +145,15 @@ html {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
 }
 
 .hero-container {
   max-width: 460px;
   display: -ms-grid;
   display: grid;
-  row-gap: 30px;
+  row-gap: 20px;
   -ms-grid-row-align: center;
       align-self: center;
 }
@@ -175,7 +175,7 @@ html {
 
 .about {
   background: #ffffff;
-  height: 588px;
+  min-height: 588px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5em 1fr 1fr 5em;
@@ -233,8 +233,8 @@ html {
   display: -ms-grid;
   display: grid;
   padding: 80px 0 100px;
-  -ms-grid-columns: 145px 1fr 145px;
-      grid-template-columns: 145px 1fr 145px;
+  -ms-grid-columns: 6em 1fr 6em;
+      grid-template-columns: 6em 1fr 6em;
   -ms-grid-rows: (auto)[3];
       grid-template-rows: repeat(3, auto);
   justify-items: center;
@@ -333,6 +333,14 @@ html {
   background: none;
 }
 
+.pets-button__previous-2 {
+  display: none;
+}
+
+.pets-button__previous-3 {
+  display: none;
+}
+
 .pets-button__next {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
@@ -341,6 +349,14 @@ html {
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
   background: none;
+}
+
+.pets-button__next-2 {
+  display: none;
+}
+
+.pets-button__next-3 {
+  display: none;
 }
 
 .pets-button:hover {
@@ -359,6 +375,7 @@ html {
 }
 
 .help {
+  min-height: 431px;
   background: #ffffff;
   padding: 80px 0 100px;
   display: -ms-grid;
@@ -507,7 +524,7 @@ html {
 }
 
 .donation {
-  height: 464px;
+  min-height: 464px;
   background: #f6f6f6;
   display: -ms-grid;
   display: grid;
@@ -526,7 +543,7 @@ html {
 }
 
 .donation-container {
-  max-width: 380px;
+  max-width: 320px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (auto)[4];
@@ -543,16 +560,18 @@ html {
 }
 
 .donation-container__card {
-  width: 349px;
+  width: 320px;
   height: 43px;
   background: #f1cdb3;
   border-radius: 9px;
-  padding: 0 15px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (auto)[2];
       grid-template-columns: repeat(2, auto);
-  justify-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  justify-items: unset;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -570,7 +589,7 @@ html {
 }
 
 .footer {
-  height: 350px;
+  min-height: 350px;
   background: url(./img/footer-gradient-background.png);
   background-size: cover;
   padding: 0 40px;
@@ -589,7 +608,9 @@ html {
   display: grid;
   -ms-grid-rows: (auto)[3];
       grid-template-rows: repeat(3, auto);
-  max-width: 305px;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
   height: 234px;
   margin-top: 56px;
   -ms-flex-line-pack: justify;

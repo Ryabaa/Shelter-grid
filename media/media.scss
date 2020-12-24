@@ -1,0 +1,214 @@
+@mixin items($jitems, $aitems) {
+    justify-items: $jitems;
+    align-items: $aitems;
+}
+
+@media (max-width: 1000px) {
+    .header-hero {
+        padding-left: 50px;
+        grid-template-rows: 1fr 4fr;
+        height: 600px;
+    }
+
+    .header {
+        grid-template-columns: 1fr;
+        @include items(center, center);
+
+        &-logo {
+            grid-row: 1 / 2;
+            align-self: end;
+        }
+
+        &-subtitle {
+            grid-row: 2 / 3;
+            align-self: start;
+        }
+
+        .nav {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+    }
+
+    .hero {
+        &-container {
+            align-self: end;
+            margin-bottom: 50px;
+        }
+
+        &-image {
+            width: 300px;
+            height: 350px;
+        }
+    }
+
+    .about {
+        padding: 100px 0;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr auto 1fr;
+        row-gap: 30px;
+        @include items(start, center);
+
+        &-image {
+            grid-row: 1 / 2;
+        }
+
+        &-container {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+    }
+
+    .pets {
+        grid-template-columns: 1fr auto 1fr;
+        height: 1800px;
+
+        &-card {
+            @include items(center, center);
+
+            &__first {
+                grid-row: 2 / 3;
+                justify-self: unset;
+            }
+            &__middle {
+                grid-row: 3 / 4;
+            }
+            &__last {
+                grid-row: 4 / 5;
+                justify-self: unset;
+            }
+        }
+
+        &-button {
+            &__previous {
+                justify-self: end;
+
+                &-1 {
+                    display: unset;
+                    grid-row: 2 / 3;
+                }
+                &-2 {
+                    display: unset;
+                    grid-row: 3 / 4;
+                }
+                &-3 {
+                    display: unset;
+                    grid-row: 4 / 5;
+                }
+            }
+
+            &__next {
+                justify-self: start;
+
+                &-1 {
+                    display: unset;
+                    grid-row: 2 / 3;
+                }
+                &-2 {
+                    display: unset;
+                    grid-row: 3 / 4;
+                }
+                &-3 {
+                    display: unset;
+                    grid-row: 4 / 5;
+                }
+            }
+        }
+
+        &-link {
+            grid-row: 6 / 7;
+        }
+    }
+
+    .help {
+        min-height: 620px;
+        grid-template-columns: 2em 1fr 2em;
+
+        &-container {
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 50px;
+        }
+
+        &-card {
+            &-1 {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+            &-2 {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            &-3 {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+            &-4 {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            &-5 {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+            &-6 {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+            &-7 {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+            &-8 {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+            &-9 {
+                grid-column: 3 / 4;
+                grid-row: 3 / 4;
+            }
+        }
+    }
+
+    .donation {
+        padding: 50px 0 80px;
+        grid-template-columns: 1fr auto 1fr;
+        @include items(start, center);
+
+        &-image {
+            width: 320px;
+        }
+
+        &-container {
+            grid-column: 2 / 3;
+        }
+    }
+
+    .footer {
+        grid-template-columns: 2em 1fr 1fr 2em;
+        padding: 0;
+        row-gap: 50px;
+        @include items(center, center);
+
+        &-container {
+            justify-self: center;
+
+            &__title {
+                font-size: 2rem;
+            }
+
+            &-1 {
+                grid-column: 2 / 3;
+            }
+
+            &-2 {
+                grid-column: 3 / 4;
+            }
+        }
+
+        &-image {
+            grid-column: 2 / 4;
+            justify-self: unset;
+        }
+    }
+}
