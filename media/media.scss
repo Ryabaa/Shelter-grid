@@ -43,7 +43,7 @@
     }
 
     .about {
-        padding: 100px 0;
+        padding: 100px 10px;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: 1fr auto 1fr;
         row-gap: 30px;
@@ -60,7 +60,7 @@
     }
 
     .pets {
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: 52px auto 52px;
         height: 1800px;
 
         &-card {
@@ -209,6 +209,100 @@
         &-image {
             grid-column: 2 / 4;
             justify-self: unset;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .header-hero {
+        height: 950px;
+        row-gap: 80px;
+    }
+
+    .header {
+        grid-template-rows: repeat(4, auto);
+
+        .nav {
+            margin-top: 25px;
+            grid-row: 3 / 5;
+            max-width: 320px;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            @include items(end, end);
+        }
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        @include items(center, end);
+        row-gap: 50px;
+
+        &-container {
+            justify-self: center;
+            text-align: center;
+            margin: 0;
+            @include items(center, center);
+            max-width: 310px;
+            row-gap: 15px;
+        }
+    }
+
+    .footer {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: 1fr 2fr 1fr;
+        @include items(unset, end);
+
+        &-container {
+            max-height: min-content;
+            &-1 {
+                grid-row: 1 / 2;
+                justify-self: start;
+            }
+
+            &-2 {
+                grid-row: 2 / 3;
+                grid-column: 2 / 3;
+                justify-self: start;
+            }
+        }
+
+        &-image {
+            margin-top: 20px;
+            grid-row: 3 / 4;
+            grid-column: 2 / 3;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 15.5px;
+    }
+
+    .header-hero {
+        padding: 0 10px;
+    }
+
+    .pets {
+        &-card {
+            max-width: 215px;
+
+            &__image {
+                width: 215px;
+            }
+        }
+
+        &-link {
+            width: 215px;
+        }
+    }
+
+    .help {
+        grid-template-columns: 1fr;
+
+        &-card__title {
+            font-size: 1.11rem;
         }
     }
 }
